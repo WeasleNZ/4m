@@ -14,7 +14,7 @@ create table BasementRats (ID int IDENTITY (1,1), Name varchar(100), TavernID in
 
 Create table Inventory(TavernID int, SupplyID int, Quantity int, DateReceived DATETIME);
 
-Create table Supplies(ID int identity (1,1), Unit varchar(100), Cost decimal);
+Create table Supplies(ID int identity (1,1), Name varchar(250), Unit varchar(100), Cost float);
 
 Create TABLE TavernServices(TavernID int, ServiceID int, StatusID Tinyint);
 
@@ -45,5 +45,3 @@ ALTER TABLE TavernServices ADD FOREIGN KEY (StatusID) References Status(ID);
 ALTER TABLE Sales ADD FOREIGN Key (ServiceID) REFERENCES Services(ID);
 ALTER TABLE Sales ADD FOREIGN Key (UsersID) REFERENCES Users(ID);
 ALTER TABLE Sales ADD FOREIGN Key (TavernID) REFERENCES Taverns(ID);
-
-
