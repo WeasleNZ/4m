@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS BasementRats, UserRoles, Taverns, Locations, Users, Roles;
 
-create table Taverns(ID INT IDENTITY(1, 1), Name varchar(250), LocationID int, OwnerID int, Floors int );
+create table Taverns(ID INT IDENTITY(1, 1), Name varchar(250), LocationID int, OwnerID int, Floors int);
 
-create table Users(ID INT IDENTITY(1, 1), Name varchar(250), RoleID tinyint );
+create table Users(ID INT IDENTITY(1, 1), Name varchar(250), RoleID tinyint);
 
-create table Roles(ID tinyint identity(1,1), Name varchar(50), Description varchar(MAX) );
+create table Roles(ID tinyint identity(1,1), Name varchar(50), Description varchar(MAX));
 
 create table BasementRats (ID int IDENTITY (1,1), Name varchar(100), Tavernid int);
 
