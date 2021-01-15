@@ -10,7 +10,7 @@ create table BasementRats (ID int IDENTITY (1,1), Name varchar(100), Tavernid in
 
 Create table Locations (ID int identity(1,1), Name varchar(100) );
 
-Create table UserRoles(UserID int, RoleID tinyint)
+Create table UserRoles(UserID int, RoleID tinyint);
 
 ALTER TABLE Locations ADD primary key (id);
 ALTER TABLE Users ADD primary key (id);
