@@ -26,9 +26,6 @@ insert into Taverns (Name, floors, ownerid, locationid) values ('The Greatest Ta
 insert into Taverns (Name, floors, ownerid, locationid) values ('The Smallest Tavern in the World', 1, 4, 5);
 insert into Taverns (Name, floors, ownerid, locationid) values ('Travis Tavern', 3, 1, 3);
 
-Insert into BasementRats (Name, TavernID) values ('Splinter',1);
-Insert into BasementRats (Name, TavernID) values ('LabRat',2);
-
 Insert into Supplies (Name, Unit, Cost) values ('Strong Ale', 'Ounce', 2.50);
 Insert into Supplies (Name, Unit, Cost) values ('Strong Bass', 'Drop', 5);
 Insert into Supplies (Name, Unit, Cost) values ('Liquid Nitrogen', 'Balloon', 3);
@@ -52,6 +49,6 @@ INSERT into TavernServices (TavernID, ServiceID, StatusID) values (1, 1, 1);
 INSERT into TavernServices (TavernID, ServiceID, StatusID) values (2, 4, 1);
 INSERT into TavernServices (TavernID, ServiceID, StatusID) values (2, 1, 1);
 
-INSERT into Sales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (1, 1, 10, '02-02-2020', 1);
-INSERT into Sales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (2, 4, 77, '06-06-2020', 2);
-INSERT into Sales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (4, 4, 50, '03-31-2021', 2);
+INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (1, 1, 10, '02-02-2020', 1);
+INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (2, 4, 77, '06-06-2020', 2);
+INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (4, 4, 50, '03-31-2021', 2);
