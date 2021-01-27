@@ -60,6 +60,10 @@ insert into Guests (name, Birthday) values ('GuestNameThree','05-12-1997');
 insert into Guests (name, Birthday) values ('GuestNameFour','09-30-2005');
 insert into Guests (name, Birthday) values ('GuestNameFive','11-05-2007');
 
+insert into Classes(Name) values ('Mage'), ('Warrior'), ('Princess'), ('Basshunter'), ('Slapper');
+
+insert into GuestClasses(GuestID, ClassID, Level) values ('1','5','8'), ('2','4','12'), ('3','2','18'), ('4','3','15'), ('4','1','10');
+
 insert into Rooms (name, rate) values ('Master Bedroom','999'), ('Tiny Cottage','5'),('Dormitory','500'),('Penthouse Suite','1999');
 
 Insert into RoomStays(Sale, GuestID, RoomID, StartDate, Price) values ('2021-01-27','2','2','2021-01-30','5'),('2000-01-20','1','1','2021-02-14','999') ;
