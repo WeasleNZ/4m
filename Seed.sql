@@ -52,3 +52,14 @@ INSERT into TavernServices (TavernID, ServiceID, StatusID) values (2, 1, 1);
 INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (1, 1, 10, '02-02-2020', 1);
 INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (2, 4, 77, '06-06-2020', 2);
 INSERT into ServiceSales (ServiceID, UsersID, Price, DatePurchased, TavernID) values (4, 4, 50, '03-31-2021', 2);
+
+
+insert into Guests (name, Birthday) values ('GuestNameOne','01-15-1990');
+insert into Guests (name, Birthday) values ('GuestNameTwo','07-25-2001');
+insert into Guests (name, Birthday) values ('GuestNameThree','05-12-1997');
+insert into Guests (name, Birthday) values ('GuestNameFour','09-30-2005');
+insert into Guests (name, Birthday) values ('GuestNameFive','11-05-2007');
+
+insert into Rooms (name, rate) values ('Master Bedroom','999'), ('Tiny Cottage','5'),('Dormitory','500'),('Penthouse Suite','1999');
+
+Insert into RoomStays(Sale, GuestID, RoomID, StartDate, Price) values ('2021-01-27','2','2','2021-01-30','5'),('2000-01-20','1','1','2021-02-14','999') ;
