@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS Supplysales, GuestClasses, Classes, Guests, Inventory, Supplies, ServiceSales, TavernServices, Services, Status, BasementRats, UserRoles, Taverns, Locations, Users, Roles;
+DROP TABLE IF EXISTS RoomStays, RoomStatus, Rooms, RoomStatusses, Supplysales, GuestClasses, Classes, Guests, Inventory, Supplies, ServiceSales, TavernServices, Services, Status, BasementRats, UserRoles, Taverns, Locations, Users, Roles;
 
 create table Taverns(ID INT IDENTITY(1, 1), Name varchar(250), Floors int, OwnerID int, LocationID int);
 
@@ -30,6 +30,14 @@ CREATE TABLE Services(ID int IDENTITY(1,1), Name VARCHAR(250));
 
 CREATE TABLE Status(ID tinyint IDENTITY(1,1), Name VARCHAR(250));
 
+CREATE TABLE Rooms(ID tinyint IDENTITY(1,1), Name VARCHAR(250), Rate money);
+
+CREATE TABLE RoomStatus(ID tinyint IDENTITY(1,1), RoomID tinyint, StatusID tinyint, TavernID int);
+
+Create Table RoomStatusses(ID tinyint IDENTITY(1,1), Status varchar(250));
+
+CREATE TABLE RoomStays(ID tinyint IDENTITY(1,1), Sale datetime, GuestID int, RoomID tinyint, StartDate datetime, Price money);
+
 ALTER TABLE Locations ADD primary key (id);
 ALTER TABLE Users ADD primary key (id);
 ALTER TABLE Roles ADD primary key (id);
@@ -41,6 +49,10 @@ ALTER TABLE Status ADD primary key (ID);
 ALTER TABLE Taverns ADD primary key (ID);
 ALTER TABLE Guests ADD primary key (ID);
 ALTER TABLE Classes ADD primary key (ID);
+ALTER TABLE Rooms ADD primary key (ID);
+ALTER TABLE RoomStatus ADD primary key (ID);
+ALTER TABLE RoomStays ADD primary key (ID);
+ALTER TABLE RoomStatusses ADD primary key (ID);
 ALTER TABLE Taverns ADD FOREIGN KEY (LocationID) References Locations(ID);
 ALTER TABLE Taverns ADD FOREIGN KEY (OwnerID) References Users(ID);
 ALTER TABLE UserRoles ADD FOREIGN KEY (UserID) References Users(ID);
@@ -59,3 +71,10 @@ ALTER TABLE SupplySales ADD FOREIGN Key (TavernID) REFERENCES Taverns(ID);
 ALTER TABLE GuestClasses ADD FOREIGN Key (GuestID) REFERENCES Guests(ID);
 ALTER TABLE GuestClasses ADD FOREIGN Key (ClassID) REFERENCES Classes(ID);
 ALTER TABLE Guests ADD FOREIGN Key (StatusID) REFERENCES Status(ID);
+
+ALTER TABLE RoomStatus ADD FOREIGN Key (RoomID) REFERENCES Rooms(ID);
+ALTER TABLE RoomStatus ADD FOREIGN Key (TavernID) REFERENCES Taverns(ID);
+ALTER TABLE RoomStatus ADD FOREIGN Key (StatusID) REFERENCES RoomStatusses(ID);
+
+ALTER TABLE RoomStays ADD FOREIGN Key (GuestID) REFERENCES Guests(ID);
+ALTER TABLE RoomStays ADD FOREIGN Key (RoomID) REFERENCES Rooms(ID);
